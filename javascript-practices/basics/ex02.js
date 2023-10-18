@@ -1,19 +1,46 @@
 /**
  * 변수와 자료형
  * 
- * 기본타입
+ * [ 기본타입 ]
  *  - undefined
  *  - number (float, int 등 구분 x)
  *  - string
  *  - boolean
  * 
- * 객체
+ * [ 객체 ]
  * - object
+ *   1. new 생성자 함수() 사용해서 생성
+ *   2. 리터럴
+ *      {}, [], //
+ *   3. null
+ *  
  * - function
+ *   1. new Function() 사용해서 생성
+ *   2. 리터럴
+ *      f = function() { ... }
+ *   3. function f() { ... }
  */
 
-console.log("=== 기본타입 (undefined, number, string boolean) ===");
-// myVariable  // reference error
+/**
+ * 자바스크립트 객체를 분류하는 또 다른 방법
+ * 
+ * 1. 내장 객체
+ *    javascript engine 내부에 미리 내장(정의)되어 있는 객체
+ *     - 생성자 함수: Number, Boolean, String, Data, ...
+ *     - 일반 함수: parseInt, setTimeout, setInterval
+ * 
+ * 2. 호스트 객체
+ *    javascript 엔진이 embed(포함) 되어 있는 호스트 환경에 있는 객체
+ *    Browser 호스트: screen, location, navigator, document(DOM), XmlHttpRequest
+ *    Node 호스트: http, os, fs, path, process, server, ...
+ * 
+ * 3. 사용자 객체
+ *    javascript 엔진이 실행되면서 생성하는 객체
+ *    
+ */
+
+console.log("=== 기본타입 (undefined, number, string, boolean) ===");
+// myVariable       // reference error
 var u = undefined;  // 변수 선언     var u; 와 동일, 자바스크립트는 정의와 선언을 구분하지 않는다.
 var i = 10;         // 변수 정의
 var s = 'Hello World';
@@ -31,10 +58,10 @@ var b2 = new Boolean(true);
 
 var o = new Object();
 var a = new Array();
-var re = new RegExp();
+var re = new RegExp();  // 정규 표현식 객체
 var d = new Date();
-var o2 = {};
-var a2 = [];
+var o2 = {};            // {}: 객체 리터럴
+var a2 = [];            // []: 배열 리터럴
 var re2 = /^js$/gi;
 var n = null;
 
@@ -69,4 +96,3 @@ console.log(f3(10, 20) + ":" + typeof(f3)  + ":" + (f3 instanceof(Function)));
 console.log("=== 원시 타입도 메소드를 호출 할 수 있다. (유사 객체) ===")
 console.log(b2.valueOf());
 console.log(b.valueOf());   // console.log(new Boolean(b).valueOf())
-console.log(new Boolean(b).valueOf());
