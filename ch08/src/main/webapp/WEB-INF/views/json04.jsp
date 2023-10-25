@@ -16,21 +16,21 @@ $(function(){
 		contents: '호이~'	
 	};
 	
-	
 	$('button').click(function(){
+		console.log(JSON.stringify(vo));
+		
 		$.ajax({
-			url: '${pageContext.request.contextPath }/api/post01',
+			url: '${pageContext.request.contextPath }/api/post02',
 			async: true,
 			type: 'post',
 			dataType: 'json',
-			contentType: 'application/x-www-form-urlencoded',
-			data: $.param(vo),
+			contentType: 'application/json',
+			data: JSON.stringify(vo),
 			success: function(response) {
 				if(response.result !== "success") {
 					console.error(response.message);
 					return;
 				}
-
 				var vo = response.data;
 				
 				var htmls = "";
