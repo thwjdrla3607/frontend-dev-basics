@@ -1,6 +1,6 @@
 /**
- * Arrow Function
- * 
+ * Arrow Function (화살표 함수)
+ *  
  */
 
 const power = function(x) {
@@ -34,7 +34,7 @@ numbers.forEach(function(n) {
 });
 
 
-// ex2
+// ex2: 매개변수가 하나인 경우 괄호를 생략할 수 있다.
 console.log("\n--------");
 numbers.forEach(n => process.stdout.write(`${n}: ${(x => x*x)(n)}\t`));
 
